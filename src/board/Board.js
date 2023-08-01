@@ -11,10 +11,11 @@ let tempstate = "HOLD";
 let frameRate = 120;
 let cycleWidth = 30;
 export function redrawCanvas() {
-  global.canvas.width = document.body.clientWidth;
-  global.canvas.height = document.body.clientHeight;
+  global.canvas.width = document.documentElement.clientWidth;
+  global.canvas.height = document.documentElement.clientHeight;
   global.context.fillStyle = global.boardColor;
   global.context.fillRect(0, 0, global.canvas.width, global.canvas.height);
+  
   for (let i = 0; i < global.drawing.length; i++) {
     if (global.drawing[i].type === "DRAW") {
       for (let j = 0; j < global.drawing[i].data.length; j++) {
@@ -503,9 +504,7 @@ export default function Board() {
   }, []);
   return (
     <>
-      <canvas id="board" className="h-screen overflow-scroll">
-        Board
-      </canvas>
+      <canvas id="board">Board</canvas>
     </>
   );
 }

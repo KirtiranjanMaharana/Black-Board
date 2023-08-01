@@ -110,7 +110,7 @@ export default function ToolBox() {
   }
 
   function openGithub() {
-    window.open("https://github.com/ZadeAbhishek/infiboard");
+    window.open("https://github.com/KirtiranjanMaharana/Black-Board");
   }
 
   return (
